@@ -119,9 +119,9 @@ So, let's do that!
 
 class Book
   attr_accessor :author, :page_count  # remove the attr_accessor for genre
-  attr_reader :title, :genre  # add an attr_reader for genre
+  attr_reader :title, :brand  # add an attr_reader for genre
 
-  GENRES = []
+BRANDS = []
 
   def initialize(title)
     @title = title
@@ -132,10 +132,13 @@ class Book
   end
 
   # create the writer for genre and add the logic for the class constant
-  def genre=(genre)
-    @genre = genre
-    GENRES << genre 
-  end
+  def brand=(brand) 
+  @brand = brand 
+  
+  brand.each do |brand| 
+  BRANDS << brand.uniq  
+  end 
+
 end
 ```
 
